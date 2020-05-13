@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit colors="true">
+    <testsuites>
+        <testsuite name="ECPay eInvoice test">
+            <directory>test</directory>
+        </testsuite>
+    </testsuites>
+    <php>
+        <env name="SERVER" value="https://einvoice-stage.ecpay.com.tw"/>
+        <env name="MERCHANT_ID" value="2000132"/>
+        <env name="HASH_KEY" value="ejCk326UnaZWKisg"/>
+        <env name="HASH_IV" value="q9jcZX8Ib9LM8wYk"/>
+        <env name="BARCODE" value="/YC+RROR"/>
+        <env name="LOVECODE" value="9527"/>
+    </php>
+</phpunit>
