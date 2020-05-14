@@ -2,6 +2,8 @@
 
 namespace ecPay\eInvoice;
 
+use Exception;
+
 abstract class Content implements InvoiceInterface
 {
     use AES;
