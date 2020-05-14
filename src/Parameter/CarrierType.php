@@ -1,6 +1,6 @@
 <?php
 
-namespace ecPay\eInvocie\Parameter;
+namespace ecPay\eInvoice\Parameter;
 
 class CarrierType
 {

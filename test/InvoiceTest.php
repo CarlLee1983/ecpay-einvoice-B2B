@@ -9,7 +9,7 @@ class InvoiceTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new ecPay\eInvocie\Invoice(
+        $this->instance = new ecPay\eInvoice\Invoice(
             $_ENV['SERVER'],
             $_ENV['MERCHANT_ID'],
             $_ENV['HASH_KEY'],

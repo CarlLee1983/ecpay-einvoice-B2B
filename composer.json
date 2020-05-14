@@ -2,7 +2,7 @@
     "name": "ecpay/einovice",
     "description": "ECPay invoice package.",
     "license": "MIT",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "authors": [
         {
             "name": "Carl",
@@ -18,7 +18,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "ecPay\\eInvocie\\": "src"
+            "ecPay\\eInvoice\\": "src"
         }
     },
     "require": {

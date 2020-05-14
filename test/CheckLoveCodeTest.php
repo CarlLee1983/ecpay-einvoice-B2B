@@ -9,7 +9,7 @@ class CheckLoveCodeTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new ecPay\eInvocie\CheckLoveCode(
+        $this->instance = new ecPay\eInvoice\CheckLoveCode(
             $_ENV['SERVER'],
             $_ENV['MERCHANT_ID'],
             $_ENV['HASH_KEY'],

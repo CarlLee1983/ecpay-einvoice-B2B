@@ -1,6 +1,6 @@
 <?php
 
-namespace ecPay\eInvocie;
+namespace ecPay\eInvoice;
 
 class Response
 {

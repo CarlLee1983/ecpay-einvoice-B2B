@@ -1,6 +1,6 @@
 <?php
 
-namespace ecPay\eInvocie;
+namespace ecPay\eInvoice;
 
 abstract class Content implements InvoiceInterface
 {

@@ -1,11 +1,11 @@
 <?php
 
-namespace ecPay\eInvocie;
+namespace ecPay\eInvoice;
 
 use Exception;
-use ecPay\eInvocie\Parameter\InvoiceTagType;
-use ecPay\eInvocie\Parameter\NotifyType;
-use ecPay\eInvocie\Parameter\NotifiedType;
+use ecPay\eInvoice\Parameter\InvoiceTagType;
+use ecPay\eInvoice\Parameter\NotifyType;
+use ecPay\eInvoice\Parameter\NotifiedType;
 
 class InvoiceNotify extends Content
 {

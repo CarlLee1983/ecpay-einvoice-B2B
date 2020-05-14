@@ -9,7 +9,7 @@ class GetInvoiceTest extends PHPUnit_Framework_TestCase
      */
     public function setUp()
     {
-        $this->instance = new ecPay\eInvocie\GetInvoice(
+        $this->instance = new ecPay\eInvoice\GetInvoice(
             $_ENV['SERVER'],
             $_ENV['MERCHANT_ID'],
             $_ENV['HASH_KEY'],
@@ -20,7 +20,7 @@ class GetInvoiceTest extends PHPUnit_Framework_TestCase
     public function testQuickCheck()
     {
         $relateNumber = 'YEP' . date('YmdHis');
-        $invoice = new ecPay\eInvocie\Invoice(
+        $invoice = new ecPay\eInvoice\Invoice(
             $_ENV['SERVER'],
             $_ENV['MERCHANT_ID'],
             $_ENV['HASH_KEY'],

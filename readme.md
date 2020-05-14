@@ -18,7 +18,7 @@ $id = '2000132';
 $key = 'ejCk326UnaZWKisg';
 $iv = 'q9jcZX8Ib9LM8wYk';
 
-$invoice = new ecPay\eInvocie\Invoice($server, $id, $key, $iv);
+$invoice = new ecPay\eInvoice\Invoice($server, $id, $key, $iv);
 $response = $invoice->setRelateNumber('YEP' . date('YmdHis'))
     ->setCustomerEmail('cylee@chyp.com.tw')
     ->setItems([
@@ -52,7 +52,7 @@ $InvoiceNo = '';
 # format - Y-m-d
 $InvoiceDate = '';
 
-$invoice = new ecPay\eInvocie\GetInvoice($server, $id, $key, $iv);
+$invoice = new ecPay\eInvoice\GetInvoice($server, $id, $key, $iv);
     $response = $invoice->setRelateNumber($relateNumber)
         ->setInvoiceNo($InvoiceNo)
         ->setInvoiceDate($InvoiceDate)
@@ -67,7 +67,7 @@ $id = '2000132';
 $key = 'ejCk326UnaZWKisg';
 $iv = 'q9jcZX8Ib9LM8wYk';
 
-$invoice = new ecPay\eInvocie\CheckLoveCode($server, $id, $key, $iv);
+$invoice = new ecPay\eInvoice\CheckLoveCode($server, $id, $key, $iv);
 $response = $invoice->setLoveCode('9527')->sendRequest();
 ```
 
@@ -78,7 +78,7 @@ $id = '2000132';
 $key = 'ejCk326UnaZWKisg';
 $iv = 'q9jcZX8Ib9LM8wYk';
 
-$invoice = new ecPay\eInvocie\CheckBarcode($server, $id, $key, $iv);
+$invoice = new ecPay\eInvoice\CheckBarcode($server, $id, $key, $iv);
 $response = $invoice->setBarcode('/YC+RROR')->sendRequest();
 
 ```

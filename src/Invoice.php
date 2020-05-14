@@ -1,15 +1,15 @@
 <?php
 
-namespace ecPay\eInvocie;
+namespace ecPay\eInvoice;
 
 use Exception;
-use ecPay\eInvocie\Parameter\PrintMark;
-use ecPay\eInvocie\Parameter\CarrierType;
-use ecPay\eInvocie\Parameter\ClearanceMark;
-use ecPay\eInvocie\Parameter\Donation;
-use ecPay\eInvocie\Parameter\TaxType;
-use ecPay\eInvocie\Parameter\InvType;
-use ecPay\eInvocie\Parameter\VatType;
+use ecPay\eInvoice\Parameter\PrintMark;
+use ecPay\eInvoice\Parameter\CarrierType;
+use ecPay\eInvoice\Parameter\ClearanceMark;
+use ecPay\eInvoice\Parameter\Donation;
+use ecPay\eInvoice\Parameter\TaxType;
+use ecPay\eInvoice\Parameter\InvType;
+use ecPay\eInvoice\Parameter\VatType;
 
 class Invoice extends Content
 {
