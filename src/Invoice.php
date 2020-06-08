@@ -179,7 +179,7 @@ class Invoice extends Content
      */
     public function setDonation(string $donation): InvoiceInterface
     {
-        if ($donation != Donation::YES || $donation != Donation::NO) {
+        if (!in_array($donation, [Donation::YES,  Donation::NO])) {
             throw new Exception('Invoice donation format is wrong.');
         }
 
