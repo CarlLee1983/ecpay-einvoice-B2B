@@ -53,9 +53,10 @@ class GetInvalidInvoice extends Content
      */
     public function setInvoiceDate(string $date): InvoiceInterface
     {
-        $dateTime = \DateTime::createFromFormat('Y-m-d', $date);
+        $format = 'Y-m-d';
+        $dateTime = \DateTime::createFromFormat($format, $date);
 
-        if (!($dateTime && $dateTime->format('Y-m-d') == $date)) {
+        if (!($dateTime && $dateTime->format($format) == $date)) {
             throw new Exception('The invoice date format is invalid.');
         }
 
