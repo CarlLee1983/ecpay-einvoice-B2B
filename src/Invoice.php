@@ -196,7 +196,7 @@ class Invoice extends Content
      */
     public function setLoveCode(string $code): InvoiceInterface
     {
-        $counter = count($code);
+        $counter = strlen($code);
 
         if ($counter > 7 || $counter < 3) {
             throw new Exception('Invoice love code is wrong.');
@@ -415,11 +415,11 @@ class Invoice extends Content
                 throw new Exception('Invoice carruer type is member, carruer number must be empty.');
             }
 
-            if ($data['CarrierType'] == CarrierType::CITIZEN && count($data['CarrierNum']) != 16) {
+            if ($data['CarrierType'] == CarrierType::CITIZEN && strlen($data['CarrierNum']) != 16) {
                 throw new Exception('Invoice carruer type is citizen, carruer number length must be 16.');
             }
 
-            if ($data['CarrierType'] == CarrierType::CELLPHONE && count($data['CarrierNum']) != 8) {
+            if ($data['CarrierType'] == CarrierType::CELLPHONE && strlen($data['CarrierNum']) != 8) {
                 throw new Exception('Invoice carruer type is Cellphone, carruer number length must be 8.');
             }
         }
