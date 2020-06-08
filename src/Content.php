@@ -213,6 +213,26 @@ abstract class Content implements InvoiceInterface
     }
 
     /**
+     * Setting invoice data.
+     *
+     * @param string $date
+     * @return InvoiceInterface
+     */
+    public function setInvoiceDate(string $date): InvoiceInterface
+    {
+        $format = 'Y-m-d';
+        $dateTime = \DateTime::createFromFormat($format, $date);
+
+        if (!($dateTime && $dateTime->format($format) === $date)) {
+            throw new Exception('The invoice date format is invalid.');
+        }
+
+        $this->content['Data']['InvoiceDate'] = $date;
+
+        return $this;
+    }
+
+    /**
      * Undocumented function
      *
      * @return array
