@@ -20,6 +20,7 @@ class InvoiceTest extends PHPUnit_Framework_TestCase
     public function testQuickCreate()
     {
         $this->instance->setRelateNumber('YEP' . date('YmdHis'))
+            ->setCarrierType('1')
             ->setCustomerEmail('cylee@chyp.com.tw')
             ->setItems([
                 [

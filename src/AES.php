@@ -15,17 +15,9 @@ trait AES
      */
     protected function encrypt(string $data): string
     {
-        $blockSize = mcrypt_get_block_size(MCRYPT_RIJNDAEL_128, MCRYPT_MODE_CBC);
-        $pad = $blockSize - (strlen($data) % $blockSize);
-        $code = mcrypt_encrypt(
-            MCRYPT_RIJNDAEL_128,
-            $this->hashKey,
-            $data . str_repeat(chr($pad), $pad),
-            MCRYPT_MODE_CBC,
-            $this->hashIV
-        );
+        $code = \openssl_encrypt($data, 'AES-128-CBC', $this->hashKey, OPENSSL_RAW_DATA, $this->hashIV);
 
-        return base64_encode($code);
+        return \base64_encode($code);
     }
 
     /**
@@ -36,15 +28,9 @@ trait AES
      */
     public function decrypt(string $data): string
     {
-        $data = mcrypt_decrypt(
-            MCRYPT_RIJNDAEL_128,
-            $this->hashKey,
-            base64_decode($data),
-            MCRYPT_MODE_CBC,
-            $this->hashIV
-        );
-        $pad = ord($data[strlen($data) - 1]);
+        $data = base64_decode($data);
+        $data = openssl_decrypt($data, 'AES-128-CBC', $this->hashKey, OPENSSL_RAW_DATA, $this->hashIV);
 
-        return urldecode(substr($data, 0, -$pad));
+        return \urldecode($data);
     }
 }

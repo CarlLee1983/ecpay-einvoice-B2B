@@ -233,7 +233,7 @@ abstract class Content implements InvoiceInterface
     }
 
     /**
-     * Undocumented function
+     * Get content.
      *
      * @return array
      */

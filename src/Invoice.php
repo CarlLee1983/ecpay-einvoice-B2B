@@ -342,15 +342,7 @@ class Invoice extends Content
     {
         $this->content['Data']['Items'] = $this->items;
 
-        $this->validation();
-
-        $content = $this->content;
-        $content['Data'] = json_encode($content['Data']);
-        $content['Data'] = urlencode($content['Data']);
-        $content['Data'] = $this->transUrlencode($content['Data']);
-        $content['Data'] = $this->encrypt($content['Data']);
-
-        return $content;
+        return parent::getContent();
     }
 
     /**
