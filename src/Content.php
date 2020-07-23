@@ -77,7 +77,7 @@ abstract class Content implements InvoiceInterface
             'RqHeader' => [
                 'Timestamp' => time(),
                 'RqID' => $this->getRqID(),
-                'Revison' => self::VERSION,
+                'Revision' => self::VERSION,
             ]
         ];
 
