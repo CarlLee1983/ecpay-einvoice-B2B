@@ -9,7 +9,10 @@ class Response
      *
      * @var array
      */
-    protected $data = [];
+    protected $data = [
+        'RtnCode' => 0,
+        'RtnMsg' => '',
+    ];
 
     /**
      * __construct
@@ -18,7 +21,9 @@ class Response
      */
     public function __construct(array $data = [])
     {
-        $this->setData($data);
+        if (!empty($data)) {
+            $this->setData($data);
+        }
     }
 
     /**
@@ -29,7 +34,13 @@ class Response
      */
     public function setData(array $data): Response
     {
-        $this->data = $data;
+        if (isset($data['RtnCode'])) {
+            $this->data['RtnCode'] = $data['RtnCode'];
+        }
+
+        if (isset($data['RtnMsg'])) {
+            $this->data['RtnMsg'] = $data['RtnMsg'];
+        }
 
         return $this;
     }

@@ -100,7 +100,7 @@ abstract class Content implements InvoiceInterface
      * @param string $id
      * @return Content
      */
-    public function setMerchantID(string $id): Content
+    public function setMerchantID(string $id): self
     {
         $this->merchantID = $id;
 
@@ -113,7 +113,7 @@ abstract class Content implements InvoiceInterface
      * @param string $key
      * @return $this
      */
-    public function setHashKey($key)
+    public function setHashKey($key): self
     {
         $this->hashKey = $key;
 
@@ -126,7 +126,7 @@ abstract class Content implements InvoiceInterface
      * @param string $iv
      * @return $this
      */
-    public function setHashIV($iv)
+    public function setHashIV($iv): self
     {
         $this->hashIV = $iv;
 
@@ -176,7 +176,7 @@ abstract class Content implements InvoiceInterface
      * @param string $macValue
      * @return string
      */
-    protected function transUrlencode($param)
+    protected function transUrlencode($param): string
     {
         $list = [
             '%2d' => '-',
@@ -276,7 +276,7 @@ abstract class Content implements InvoiceInterface
      * @param string $url
      * @return array
      */
-    public function sendRequest()
+    public function sendRequest(): array
     {
         $body = (new Request($this->requestServer . $this->requestPath, $this->getContent()))->send();
         $body['Data'] = $this->decrypt($body['Data']);

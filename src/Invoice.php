@@ -162,7 +162,7 @@ class Invoice extends Content
      */
     public function setPrintMark(string $mark): InvoiceInterface
     {
-        if ($mark != PrintMark::YES || $mark != PrintMark::NO) {
+        if ($mark != PrintMark::YES && $mark != PrintMark::NO) {
             throw new Exception('Invoice print mark format is wrong.');
         }
 
@@ -213,7 +213,7 @@ class Invoice extends Content
      * @param string $type
      * @return InvoiceInterface
      */
-    public function setCarrierType(string $type): InvoiceInterface
+    public function setCarrierType(string $type): self
     {
         $carrierType = [
             CarrierType::NONE,
@@ -361,7 +361,7 @@ class Invoice extends Content
         }
 
         if ($data['Print'] == PrintMark::YES) {
-            if ($data['CustomerName'] || $data['CustomerAddr']) {
+            if (empty($data['CustomerName']) || empty($data['CustomerAddr'])) {
                 throw new Exception('Because print mark is yes. Customer name and address can not be empty.');
             }
         }
@@ -376,7 +376,15 @@ class Invoice extends Content
             }
         }
 
-        if (!empty($data['CustomerIdentifier'])) {
+        if (!empty($data['CustomerIdentifier']) || !empty($data['CustomerName'])) {
+            if (empty($data['CustomerIdentifier'])) {
+                throw new Exception('Because setting CustomerIdentifier, must setting CustomerName');
+            }
+
+            if (empty($data['CustomerName'])) {
+                throw new Exception('Because setting CustomerName, must setting CustomerIdentifier');
+            }
+
             if ($data['Print'] == PrintMark::NO) {
                 throw new Exception('Because custmoer identifier not empy, print mark must be Yes');
             }
@@ -399,7 +407,7 @@ class Invoice extends Content
         if ($data['CarrierType'] == CarrierType::NONE && $data['CarrierNum'] != '') {
             throw new Exception('Invoice carruer type is empty, carruer number must be empty.');
         } else {
-            if ($data['Print'] == PrintMark::YES) {
+            if ($data['Print'] == PrintMark::YES && $data['CarrierType'] != CarrierType::NONE) {
                 throw new Exception('carruer type no empty, invoice can not be print.');
             }
 
