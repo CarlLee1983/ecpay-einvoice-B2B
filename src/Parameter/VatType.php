@@ -4,7 +4,7 @@ namespace ecPay\eInvoice\Parameter;
 
 class VatType
 {
-    const NO = '0';
+    public const NO = '0';
 
-    const YES = '1';
+    public const YES = '1';
 }

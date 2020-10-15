@@ -5,14 +5,14 @@ namespace ecPay\eInvoice\Parameter;
 class AllowanceNotifyType
 {
     // 簡訊通知
-    const SMS = 'S';
+    public const SMS = 'S';
 
     // 電子郵件通知
-    const EMAIL = 'E';
+    public const EMAIL = 'E';
 
     // 皆通知
-    const ALL = 'A';
+    public const ALL = 'A';
 
     // 皆不通知
-    const NONE = 'N';
+    public const NONE = 'N';
 }

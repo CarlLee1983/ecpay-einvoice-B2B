@@ -162,7 +162,7 @@ class Invoice extends Content
      */
     public function setPrintMark(string $mark): InvoiceInterface
     {
-        if ($mark != PrintMark::YES && $mark != PrintMark::NO) {
+        if ($mark != PrintMark::YES || $mark != PrintMark::NO) {
             throw new Exception('Invoice print mark format is wrong.');
         }
 
