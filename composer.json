@@ -2,7 +2,7 @@
     "name": "ecpay/einvoice",
     "description": "ECPay invoice package.",
     "license": "MIT",
-    "version": "1.0.41",
+    "version": "1.0.42",
     "authors": [
         {
             "name": "Carl",
