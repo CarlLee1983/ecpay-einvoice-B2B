@@ -34,13 +34,7 @@ class Response
      */
     public function setData(array $data): Response
     {
-        if (isset($data['RtnCode'])) {
-            $this->data['RtnCode'] = $data['RtnCode'];
-        }
-
-        if (isset($data['RtnMsg'])) {
-            $this->data['RtnMsg'] = $data['RtnMsg'];
-        }
+        $this->data = $data;
 
         return $this;
     }
