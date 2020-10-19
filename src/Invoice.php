@@ -21,13 +21,6 @@ class Invoice extends Content
     protected $requestPath = '/B2CInvoice/Issue';
 
     /**
-     * The invoice tax type.
-     *
-     * @var string
-     */
-    protected $taxType = TaxType::DUTIABLE;
-
-    /**
      * The invoice content.
      *
      * @var array
@@ -63,7 +56,7 @@ class Invoice extends Content
             'LoveCode' => '',
             'CarrierType' => CarrierType::NONE,
             'CarrierNum' => '',
-            'TaxType' => $this->taxType,
+            'TaxType' => TaxType::DUTIABLE,
             'SalesAmount' => 0,
             'InvoiceRemark' => '',
             'Items' => [],
