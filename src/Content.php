@@ -279,9 +279,17 @@ abstract class Content implements InvoiceInterface
     public function sendRequest(): array
     {
         $body = (new Request($this->requestServer . $this->requestPath, $this->getContent()))->send();
-        $body['Data'] = $this->decrypt($body['Data']);
-        $body['Data'] = json_decode($body['Data'], true);
-        $this->response->setData($body['Data']);
+
+        if (!empty($body['data'])) {
+            $body['Data'] = $this->decrypt($body['Data']);
+            $body['Data'] = json_decode($body['Data'], true);
+            $this->response->setData($body['Data']);
+        } else {
+            $body['Data'] = [
+                'RtnCode' => $body['TransCode'],
+                'RtnMsg' => $body['TransMsg'],
+            ];
+        }
 
         return $body;
     }
