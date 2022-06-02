@@ -78,7 +78,7 @@ abstract class Content implements InvoiceInterface
                 'Timestamp' => time(),
                 'RqID' => $this->getRqID(),
                 'Revision' => self::VERSION,
-            ]
+            ],
         ];
 
         $this->initContent();
@@ -280,7 +280,7 @@ abstract class Content implements InvoiceInterface
     {
         $body = (new Request($this->requestServer . $this->requestPath, $this->getContent()))->send();
 
-        if (!empty($body['data'])) {
+        if (!empty($body['Data'])) {
             $body['Data'] = $this->decrypt($body['Data']);
             $body['Data'] = json_decode($body['Data'], true);
             $this->response->setData($body['Data']);
