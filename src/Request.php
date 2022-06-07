@@ -5,7 +5,7 @@ namespace ecPay\eInvoice;
 use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
-Use GuzzleHttp\Psr7;
+use GuzzleHttp\Psr7;
 
 class Request
 {

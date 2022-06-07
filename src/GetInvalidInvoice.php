@@ -44,4 +44,20 @@ class GetInvalidInvoice extends Content
 
         return $this;
     }
+
+    /**
+     * Validation content.
+     *
+     * @return void
+     */
+    public function validation()
+    {
+        $this->validatorBaseParam();
+
+        $data = $this->content['Data'];
+
+        if (empty($data['InvoiceNo'])) {
+            throw new Exception('The invoice no is empty.');
+        }
+    }
 }

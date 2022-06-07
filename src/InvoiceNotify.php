@@ -2,10 +2,10 @@
 
 namespace ecPay\eInvoice;
 
-use Exception;
 use ecPay\eInvoice\Parameter\InvoiceTagType;
-use ecPay\eInvoice\Parameter\NotifyType;
 use ecPay\eInvoice\Parameter\NotifiedType;
+use ecPay\eInvoice\Parameter\NotifyType;
+use Exception;
 
 class InvoiceNotify extends Content
 {
@@ -14,7 +14,7 @@ class InvoiceNotify extends Content
      *
      * @var string
      */
-    protected $requestPath = '/B2CInvoice/InvalidNotify';
+    protected $requestPath = '/B2CInvoice/InvoiceNotify';
 
     /**
      * Initialize invoice content.
@@ -196,7 +196,7 @@ class InvoiceNotify extends Content
             in_array($data['InvoiceTag'], [
                 InvoiceTagType::ALLOWANCE,
                 InvoiceTagType::ALLOWANCE_VOID,
-        ])) {
+            ])) {
             if (empty($data['AllowanceNo'])) {
                 throw new Exception('Invoice tag type is allowed or allowed invalid, `AllowanceNo` shulde be set.');
             }

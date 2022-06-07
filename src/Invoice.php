@@ -2,14 +2,14 @@
 
 namespace ecPay\eInvoice;
 
-use Exception;
-use ecPay\eInvoice\Parameter\PrintMark;
 use ecPay\eInvoice\Parameter\CarrierType;
 use ecPay\eInvoice\Parameter\ClearanceMark;
 use ecPay\eInvoice\Parameter\Donation;
-use ecPay\eInvoice\Parameter\TaxType;
 use ecPay\eInvoice\Parameter\InvType;
+use ecPay\eInvoice\Parameter\PrintMark;
+use ecPay\eInvoice\Parameter\TaxType;
 use ecPay\eInvoice\Parameter\VatType;
+use Exception;
 
 class Invoice extends Content
 {
@@ -179,7 +179,7 @@ class Invoice extends Content
      */
     public function setDonation(string $donation): InvoiceInterface
     {
-        if (!in_array($donation, [Donation::YES,  Donation::NO])) {
+        if (!in_array($donation, [Donation::YES, Donation::NO])) {
             throw new Exception('Invoice donation format is wrong.');
         }
 
