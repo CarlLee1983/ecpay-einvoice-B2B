@@ -2,7 +2,7 @@
     "name": "ecpay/einvoice",
     "description": "ECPay invoice package.",
     "license": "MIT",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "authors": [
         {
             "name": "Carl",
@@ -22,8 +22,8 @@
         }
     },
     "require": {
-        "php": ">=5.6.4",
-        "guzzlehttp/guzzle": "^6.2"
+        "php": ">=7",
+        "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
