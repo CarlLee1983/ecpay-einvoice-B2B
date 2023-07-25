@@ -4,8 +4,6 @@ namespace ecPay\eInvoice;
 
 use Exception;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Psr7;
 
 class Request
 {
@@ -58,7 +56,9 @@ class Request
             return json_decode($response->getBody(), true);
         } catch (RequestException $exception) {
             if ($exception->hasResponse()) {
-                throw new Exception(Psr7\Str($exception->getResponse()));
+                $response = $e->getResponse();
+
+                throw new Exception($response->getBody()->getContents());
             }
 
             throw new Exception('Request Error.');
